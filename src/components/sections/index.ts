@@ -1,10 +1,10 @@
 /**
  * Section Components - Content Blocks
- * 
+ *
  * This directory contains the main content section components that represent
  * different "attention heads" in our transformer-themed portfolio. Each
  * section focuses on a specific aspect of the professional profile.
- * 
+ *
  * @fileoverview Section component exports
  */
 
@@ -18,4 +18,5 @@
 // export { HeroSection } from './HeroSection';
 
 // Placeholder export to prevent TypeScript errors
-export const SECTION_COMPONENTS_PLACEHOLDER = 'Section components will be exported here'; 
+export const SECTION_COMPONENTS_PLACEHOLDER =
+  'Section components will be exported here';

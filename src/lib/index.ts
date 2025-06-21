@@ -1,10 +1,10 @@
 /**
  * Library Utilities Barrel Exports
- * 
+ *
  * This file serves as the main entry point for all utility functions,
  * data structures, and type definitions used throughout the AI portfolio.
  * Think of this as the "preprocessing layer" of our transformer architecture.
- * 
+ *
  * @example
  * import { cn, formatDate, type Project } from '@/lib'
  */
@@ -26,4 +26,4 @@ export * from './types';
 // export { projectsData } from './data/projects';
 // export { skillsData } from './data/skills';
 // export { experienceData } from './data/experience';
-// export type { Project, Skill, Experience } from './types'; 
+// export type { Project, Skill, Experience } from './types';

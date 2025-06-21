@@ -4,11 +4,11 @@ import { Component, ErrorInfo, ReactNode } from 'react';
 
 /**
  * Error Boundary Component - Neural Network Error Handler
- * 
+ *
  * This component catches JavaScript errors anywhere in the child component tree
  * and displays a fallback UI with transformer-themed styling. It maintains the
  * neural network aesthetic while providing helpful error information.
- * 
+ *
  * @example
  * <ErrorBoundary fallback={<CustomErrorUI />}>
  *   <YourComponent />
@@ -40,8 +40,12 @@ export class ErrorBoundary extends Component<Props, State> {
 
   override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // Log error information for debugging
-    console.error('Neural Network Error Boundary caught an error:', error, errorInfo);
-    
+    console.error(
+      'Neural Network Error Boundary caught an error:',
+      error,
+      errorInfo
+    );
+
     // Update state with error details
     this.setState({
       error,
@@ -76,20 +80,20 @@ export class ErrorBoundary extends Component<Props, State> {
                 <div className="absolute inset-0 rounded-full border-2 border-primary-500 opacity-30 animate-pulse"></div>
                 <div className="absolute inset-2 rounded-full border-2 border-secondary-500 opacity-50 animate-pulse delay-100"></div>
                 <div className="absolute inset-4 rounded-full border-2 border-tertiary-500 opacity-70 animate-pulse delay-200"></div>
-                
+
                 {/* Error symbol in center */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <svg 
-                    className="w-8 h-8 text-secondary-500" 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className="w-8 h-8 text-secondary-500"
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={2} 
-                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" 
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
                     />
                   </svg>
                 </div>
@@ -104,8 +108,8 @@ export class ErrorBoundary extends Component<Props, State> {
 
             {/* Error Description */}
             <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              A disruption occurred in the information flow. The transformer layers
-              are working to re-establish optimal attention patterns.
+              A disruption occurred in the information flow. The transformer
+              layers are working to re-establish optimal attention patterns.
             </p>
 
             {/* Technical Details (Development Mode) */}
@@ -116,14 +120,18 @@ export class ErrorBoundary extends Component<Props, State> {
                 </h3>
                 <div className="space-y-3 text-sm">
                   <div>
-                    <span className="text-tertiary-500 font-medium">Error:</span>
+                    <span className="text-tertiary-500 font-medium">
+                      Error:
+                    </span>
                     <code className="block mt-1 text-gray-300 bg-black p-2 rounded">
                       {this.state.error.message}
                     </code>
                   </div>
                   {this.state.errorInfo && (
                     <div>
-                      <span className="text-tertiary-500 font-medium">Stack Trace:</span>
+                      <span className="text-tertiary-500 font-medium">
+                        Stack Trace:
+                      </span>
                       <code className="block mt-1 text-gray-300 bg-black p-2 rounded max-h-40 overflow-y-auto">
                         {this.state.errorInfo.componentStack}
                       </code>
@@ -141,7 +149,7 @@ export class ErrorBoundary extends Component<Props, State> {
               >
                 Reinitialize Network
               </button>
-              
+
               <button
                 onClick={() => window.location.reload()}
                 className="border-2 border-secondary-500 text-secondary-500 hover:bg-secondary-500 hover:text-black font-semibold py-3 px-6 rounded-lg transition-all duration-200"
@@ -180,4 +188,4 @@ export function useErrorBoundary() {
   };
 }
 
-export default ErrorBoundary; 
+export default ErrorBoundary;

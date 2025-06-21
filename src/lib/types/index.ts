@@ -1,10 +1,10 @@
 /**
  * Type Definitions for AI Portfolio
- * 
+ *
  * This file contains all TypeScript interfaces and types used throughout
  * the AI-themed portfolio. Types are organized using transformer terminology
  * to maintain consistency with the neural network theme.
- * 
+ *
  * @fileoverview Core type definitions for portfolio data structures
  */
 
@@ -33,7 +33,7 @@ export interface Project {
   featured: boolean;
 }
 
-export type ProjectCategory = 
+export type ProjectCategory =
   | 'electronics'
   | 'data-science'
   | 'web-development'
@@ -41,7 +41,7 @@ export type ProjectCategory =
   | 'research'
   | 'academic';
 
-export type ProjectStatus = 
+export type ProjectStatus =
   | 'completed'
   | 'in-progress'
   | 'planning'
@@ -61,7 +61,7 @@ export interface Skill {
   projects: string[]; // Project IDs where this skill was used
 }
 
-export type SkillCategory = 
+export type SkillCategory =
   | 'programming'
   | 'electronics'
   | 'data-science'
@@ -69,11 +69,7 @@ export type SkillCategory =
   | 'frameworks'
   | 'soft-skills';
 
-export type SkillLevel = 
-  | 'beginner'
-  | 'intermediate'
-  | 'advanced'
-  | 'expert';
+export type SkillLevel = 'beginner' | 'intermediate' | 'advanced' | 'expert';
 
 /**
  * Experience interface - represents professional and academic experience
@@ -93,7 +89,7 @@ export interface Experience {
   current: boolean;
 }
 
-export type ExperienceType = 
+export type ExperienceType =
   | 'work'
   | 'education'
   | 'research'
@@ -143,11 +139,11 @@ export interface AnimationConfig {
  */
 export interface ThemeConfig {
   colors: {
-    primary: string;    // Golden orange
-    secondary: string;  // Coral red  
-    tertiary: string;   // Warm amber
+    primary: string; // Golden orange
+    secondary: string; // Coral red
+    tertiary: string; // Warm amber
     background: string; // Pure black
-    text: string;       // Warm white
+    text: string; // Warm white
   };
   animations: {
     enabled: boolean;
@@ -190,4 +186,4 @@ export interface ContactForm {
 // ============================================================================
 
 // All types are already exported inline above
-// This file serves as the main entry point for type definitions 
+// This file serves as the main entry point for type definitions

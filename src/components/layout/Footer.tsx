@@ -1,235 +1,267 @@
-import React from 'react';
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Brain, Github, Linkedin, Mail, ExternalLink, Heart, Zap } from 'lucide-react';
 
 /**
- * Footer Component - Neural Network Output Layer
- * 
- * This component serves as the conclusion of the portfolio experience,
- * providing contact information and social links with transformer-themed
- * design elements that suggest information output and connectivity.
- * 
- * @example
- * <Footer />
+ * Social link configuration interface
+ * Defines the structure for external social media and contact links
  */
-
 interface SocialLink {
-  id: string;
-  label: string;
   href: string;
-  icon: React.ReactNode;
-  color: string;
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  description: string;
 }
 
+/**
+ * Quick navigation link interface
+ * Defines internal site navigation links for the footer
+ */
+interface QuickLink {
+  href: string;
+  label: string;
+}
+
+/**
+ * Social media and contact links with neural network metaphors
+ * Each link represents a different output channel from the portfolio
+ */
 const socialLinks: SocialLink[] = [
   {
-    id: 'github',
-    label: 'GitHub',
     href: 'https://github.com/yourusername',
-    color: 'hover:text-white',
-    icon: (
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-      </svg>
-    ),
+    icon: Github,
+    label: 'GitHub',
+    description: 'Code repositories and neural network implementations'
   },
   {
-    id: 'linkedin',
-    label: 'LinkedIn',
     href: 'https://linkedin.com/in/yourprofile',
-    color: 'hover:text-blue-400',
-    icon: (
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-      </svg>
-    ),
+    icon: Linkedin,
+    label: 'LinkedIn',
+    description: 'Professional network connections and opportunities'
   },
   {
-    id: 'email',
-    label: 'Email',
     href: 'mailto:your.email@example.com',
-    color: 'hover:text-primary-400',
-    icon: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'twitter',
-    label: 'Twitter',
-    href: 'https://twitter.com/yourusername',
-    color: 'hover:text-blue-400',
-    icon: (
-      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-      </svg>
-    ),
-  },
+    icon: Mail,
+    label: 'Email',
+    description: 'Direct communication channel for collaboration'
+  }
 ];
 
-const quickLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Contact', href: '#contact' },
+/**
+ * Quick navigation links for easy site traversal
+ * Represents the main neural pathways through the portfolio
+ */
+const quickLinks: QuickLink[] = [
+  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/experience', label: 'Experience' },
+  { href: '/contact', label: 'Contact' }
 ];
 
-export const Footer: React.FC = () => {
+/**
+ * Footer Component
+ * 
+ * Provides comprehensive site footer with:
+ * - Transformer-themed branding reinforcement
+ * - Social media and contact integration
+ * - Quick navigation for improved UX
+ * - Professional legal information
+ * - Neural network status indicators
+ * - Accessibility-compliant design
+ */
+export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black border-t border-gray-800 relative overflow-hidden">
-      {/* Neural Network Background Animation */}
-      <div className="absolute inset-0 pointer-events-none opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary-500 rounded-full animate-ping"></div>
-        <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-secondary-500 rounded-full animate-ping delay-300"></div>
-        <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-tertiary-500 rounded-full animate-ping delay-500"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-primary-500 rounded-full animate-ping delay-700"></div>
-        
-        {/* Connection lines */}
-        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-500/20 to-transparent"></div>
-        <div className="absolute top-1/3 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary-500/10 to-transparent"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand Section */}
-          <div className="md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              {/* Neural Network Logo */}
-              <div className="relative">
-                <div className="w-12 h-12 relative">
-                  <div className="absolute inset-0 rounded-full border-2 border-primary-500 opacity-60"></div>
-                  <div className="absolute inset-2 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 opacity-80"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="text-white font-bold text-xl">AI Portfolio</h3>
-                <p className="text-gray-400 text-sm">Neural Networks & Engineering Excellence</p>
-              </div>
-            </div>
+    <footer className="bg-gray-900/50 border-t border-gray-800 mt-auto backdrop-blur-sm">
+      <div className="container-lg py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Brand and Description Column */}
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {/* Brand Logo with Neural Theme */}
+            <Link 
+              href="/" 
+              className="flex items-center space-x-2 attention-glow rounded-lg p-2 -m-2 w-fit group"
+              aria-label="AI Portfolio - Return to homepage"
+            >
+              <Brain className="w-6 h-6 text-primary group-hover:animate-neural-pulse" aria-hidden="true" />
+              <span className="text-lg font-bold text-gradient-neural">
+                AI Portfolio
+              </span>
+              <Zap className="w-4 h-4 text-tertiary group-hover:animate-neural-pulse" aria-hidden="true" />
+            </Link>
             
-            <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-md">
-              Exploring the intersection of electronics engineering and artificial intelligence 
-              through innovative projects and transformer-inspired design patterns. 
-              Every connection matters in the neural network of innovation.
+            {/* Description */}
+            <p className="text-gray-400 text-sm leading-relaxed max-w-md">
+              A transformer-themed portfolio showcasing the intersection of electronics 
+              engineering and data science through innovative interactive design and 
+              neural network-inspired navigation patterns.
             </p>
-
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((link) => (
-                <Link
-                  key={link.id}
-                  href={link.href}
-                  className={`
-                    text-gray-400 ${link.color} transition-all duration-200 
-                    p-2 rounded-lg hover:bg-gray-800/50 hover:scale-110
-                    relative group
-                  `}
-                  aria-label={link.label}
-                  target={link.href.startsWith('http') ? '_blank' : undefined}
-                  rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                >
-                  {link.icon}
-                  
-                  {/* Neural activation indicator */}
-                  <div className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="w-1 h-1 bg-tertiary-500 rounded-full animate-ping"></div>
-                  </div>
-                  
-                  {/* Tooltip */}
-                  <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none">
-                    <div className="bg-gray-900 text-white text-xs px-2 py-1 rounded border border-gray-700 whitespace-nowrap">
-                      {link.label}
-                    </div>
-                  </div>
-                </Link>
-              ))}
+            
+            {/* Technology Stack Badge */}
+            <div className="text-xs text-gray-500 space-y-1">
+              <div className="flex items-center space-x-2">
+                <Zap className="w-3 h-3 text-primary" />
+                <span>Built with Next.js 15, TypeScript & Framer Motion</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Heart className="w-3 h-3 text-secondary" />
+                <span>Crafted with attention to accessibility & performance</span>
+              </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-semibold mb-4 flex items-center">
-              <span>Navigation</span>
-              <div className="ml-2 w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
-            </h4>
-            <nav className="space-y-2">
-              {quickLinks.map((link) => (
-                <Link
+          {/* Quick Links Column */}
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-warm-white font-semibold flex items-center space-x-2">
+              <Brain className="w-4 h-4 text-primary" />
+              <span>Neural Pathways</span>
+            </h3>
+            <nav className="space-y-2" aria-label="Footer navigation">
+              {quickLinks.map((link, index) => (
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm group"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 * index }}
+                  viewport={{ once: true }}
                 >
-                  <span className="relative">
-                    {link.label}
-                    <div className="absolute bottom-0 left-0 w-0 h-px bg-primary-500 group-hover:w-full transition-all duration-300"></div>
-                  </span>
-                </Link>
+                  <Link
+                    href={link.href}
+                    className="block text-gray-400 hover:text-primary transition-colors text-sm group"
+                  >
+                    <span className="flex items-center space-x-2">
+                      <span className="w-1 h-1 bg-gray-600 rounded-full group-hover:bg-primary transition-colors" />
+                      <span>{link.label}</span>
+                    </span>
+                  </Link>
+                </motion.div>
               ))}
             </nav>
-          </div>
+          </motion.div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-white font-semibold mb-4 flex items-center">
-              <span>Connect</span>
-              <div className="ml-2 w-2 h-2 bg-secondary-500 rounded-full animate-pulse delay-100"></div>
-            </h4>
-            <div className="space-y-3 text-sm">
-              <div className="text-gray-400">
-                <p>Open to opportunities in:</p>
-                <ul className="mt-1 space-y-1 text-gray-500">
-                  <li>• Electronics Engineering</li>
-                  <li>• Data Science & AI</li>
-                  <li>• Research Collaboration</li>
-                </ul>
+          {/* Social Links and Contact Column */}
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-warm-white font-semibold flex items-center space-x-2">
+              <ExternalLink className="w-4 h-4 text-secondary" />
+              <span>Connect & Collaborate</span>
+            </h3>
+            
+            {/* Social Links Grid */}
+            <div className="flex space-x-4">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <motion.a
+                    key={social.href}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 text-gray-400 hover:text-primary transition-colors attention-glow rounded-lg group"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 * index }}
+                    viewport={{ once: true }}
+                    title={social.description}
+                    aria-label={`${social.label} - ${social.description}`}
+                  >
+                    <Icon className="w-5 h-5 group-hover:animate-neural-pulse" aria-hidden="true" />
+                  </motion.a>
+                );
+              })}
+            </div>
+            
+            {/* Availability Status */}
+            <div className="text-xs text-gray-500 space-y-2">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span>Available for collaboration & opportunities</span>
               </div>
-              
-              <div className="pt-2">
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors duration-200 group"
-                >
-                  <span>Get in touch</span>
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+              <div className="text-gray-600">
+                Response time: Usually within 24 hours
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-          <div className="text-gray-400 text-sm">
-            © {currentYear} AI Portfolio. Crafted with neural network precision.
+        {/* Bottom Section with Copyright and Legal */}
+        <motion.div 
+          className="pt-8 mt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {/* Copyright */}
+          <div className="text-xs text-gray-500 flex items-center space-x-2">
+            <span>© {currentYear} Your Name. All rights reserved.</span>
+            <div className="w-1 h-1 bg-gray-600 rounded-full" />
+            <span>Neural Portfolio v2.0</span>
           </div>
           
-          <div className="flex items-center space-x-4 text-gray-500 text-xs">
-            <span className="flex items-center">
-              <div className="w-1 h-1 bg-primary-500 rounded-full mr-2 animate-pulse"></div>
-              Next.js & TypeScript
-            </span>
-            <span className="flex items-center">
-              <div className="w-1 h-1 bg-secondary-500 rounded-full mr-2 animate-pulse delay-100"></div>
-              Tailwind CSS
-            </span>
-            <span className="flex items-center">
-              <div className="w-1 h-1 bg-tertiary-500 rounded-full mr-2 animate-pulse delay-200"></div>
-              Transformer Theme
-            </span>
+          {/* Legal Links */}
+          <div className="flex space-x-4 text-xs text-gray-500">
+            <Link 
+              href="/privacy" 
+              className="hover:text-primary transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <div className="w-1 h-1 bg-gray-600 rounded-full self-center" />
+            <Link 
+              href="/terms" 
+              className="hover:text-primary transition-colors"
+            >
+              Terms of Service
+            </Link>
+            <div className="w-1 h-1 bg-gray-600 rounded-full self-center" />
+            <a 
+              href="/sitemap.xml"
+              className="hover:text-primary transition-colors"
+            >
+              Sitemap
+            </a>
           </div>
-        </div>
+        </motion.div>
+        
+        {/* Neural Network Status Indicator */}
+        <motion.div 
+          className="mt-6 pt-4 border-t border-gray-800/50"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex items-center justify-center space-x-2 text-xs text-gray-600">
+            <Zap className="w-3 h-3 text-primary animate-neural-pulse" />
+            <span>Transformer Architecture: Active</span>
+            <div className="w-1 h-1 bg-primary rounded-full animate-pulse" />
+            <span>All neural pathways operational</span>
+          </div>
+        </motion.div>
       </div>
     </footer>
   );
-};
-
-export default Footer; 
+}

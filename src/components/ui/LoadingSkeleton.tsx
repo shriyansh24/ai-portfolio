@@ -2,11 +2,11 @@ import React from 'react';
 
 /**
  * Loading Skeleton Component - Neural Network Training Animation
- * 
+ *
  * This component provides visual feedback during loading states with
  * transformer-themed animations that suggest neural network training
  * or information processing.
- * 
+ *
  * @example
  * <LoadingSkeleton variant="card" />
  * <LoadingSkeleton variant="text" lines={3} />
@@ -45,7 +45,7 @@ const SkeletonElement: React.FC<{
   };
 
   return (
-    <div 
+    <div
       className={`
         bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 
         ${animationClasses[animation]}
@@ -107,33 +107,18 @@ const CardSkeleton: React.FC<{
           />
         </div>
       </div>
-      
+
       {/* Content area */}
       <div className="space-y-3">
-        <SkeletonElement
-          className="h-4 rounded"
-          animation={animation}
-        />
-        <SkeletonElement
-          className="h-4 rounded"
-          animation={animation}
-        />
-        <SkeletonElement
-          className="h-4 w-5/6 rounded"
-          animation={animation}
-        />
+        <SkeletonElement className="h-4 rounded" animation={animation} />
+        <SkeletonElement className="h-4 rounded" animation={animation} />
+        <SkeletonElement className="h-4 w-5/6 rounded" animation={animation} />
       </div>
-      
+
       {/* Footer area */}
       <div className="flex justify-between items-center pt-2">
-        <SkeletonElement
-          className="h-8 w-20 rounded"
-          animation={animation}
-        />
-        <SkeletonElement
-          className="h-8 w-16 rounded"
-          animation={animation}
-        />
+        <SkeletonElement className="h-8 w-20 rounded" animation={animation} />
+        <SkeletonElement className="h-8 w-16 rounded" animation={animation} />
       </div>
     </div>
   );
@@ -210,16 +195,16 @@ export const LoadingSkeleton: React.FC<LoadingSkeletonProps> = ({
   switch (variant) {
     case 'text':
       return <TextSkeleton lines={lines} animation={animation} />;
-    
+
     case 'card':
       return <CardSkeleton animation={animation} />;
-    
+
     case 'avatar':
       return <AvatarSkeleton size={size} animation={animation} />;
-    
+
     case 'button':
       return <ButtonSkeleton size={size} animation={animation} />;
-    
+
     default:
       return <TextSkeleton lines={lines} animation={animation} />;
   }
@@ -231,9 +216,9 @@ export const LoadingSkeleton: React.FC<LoadingSkeletonProps> = ({
 export const PageLoading: React.FC<{
   message?: string;
   showProgress?: boolean;
-}> = ({ 
-  message = 'Initializing neural pathways...', 
-  showProgress = false 
+}> = ({
+  message = 'Initializing neural pathways...',
+  showProgress = false,
 }) => {
   return (
     <div className="min-h-screen bg-black flex items-center justify-center">
@@ -245,12 +230,12 @@ export const PageLoading: React.FC<{
             <div className="absolute inset-0 rounded-full border-2 border-primary-500 opacity-30 neural-pulse"></div>
             <div className="absolute inset-4 rounded-full border-2 border-secondary-500 opacity-50 neural-pulse delay-200"></div>
             <div className="absolute inset-8 rounded-full border-2 border-tertiary-500 opacity-70 neural-pulse delay-400"></div>
-            
+
             {/* Center processing node */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-primary-500 rounded-full neural-pulse delay-100"></div>
             </div>
-            
+
             {/* Connection lines */}
             <div className="absolute inset-0">
               <div className="absolute top-1/2 left-1/2 w-16 h-0.5 bg-gradient-to-r from-primary-500 to-transparent -translate-x-1/2 -translate-y-1/2 rotate-45 opacity-60 attention-flow"></div>
@@ -263,9 +248,11 @@ export const PageLoading: React.FC<{
         {/* Loading Message */}
         <h2 className="text-2xl font-semibold text-white mb-4">
           Neural Network
-          <span className="block text-primary-500 text-lg">Training in Progress</span>
+          <span className="block text-primary-500 text-lg">
+            Training in Progress
+          </span>
         </h2>
-        
+
         <p className="text-gray-300 mb-6">{message}</p>
 
         {/* Progress Indicator */}
@@ -295,4 +282,4 @@ export const PageLoading: React.FC<{
   );
 };
 
-export default LoadingSkeleton; 
+export default LoadingSkeleton;

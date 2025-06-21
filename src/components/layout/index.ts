@@ -1,24 +1,16 @@
 /**
- * Layout Components - Structural Elements
+ * Layout Components Index
  * 
- * This directory contains the layout components that form the "architecture"
- * of our transformer-themed portfolio. These components handle the overall
- * structure and navigation, acting like encoder/decoder layers.
+ * Centralized exports for all layout components used in the AI Portfolio.
+ * This follows the neural network architecture pattern where each component
+ * represents a different layer in the transformer architecture.
  * 
- * @fileoverview Layout component exports
+ * Each component serves a specific role in the overall layout system:
+ * - Navigation: Input layer for user interaction
+ * - PageLayout: Processing layer for content structure
+ * - Footer: Output layer for information and links
  */
 
-// TODO: Export layout components as they are created
-// export { Header } from './Header';
-// export { Footer } from './Footer';
-// export { Navigation } from './Navigation';
-// export { AttentionNavigation } from './AttentionNavigation';
-// export { Sidebar } from './Sidebar';
-// export { PageWrapper } from './PageWrapper';
-
-// Layout Component Exports - Neural Network Structure Elements
-export { Header } from './Header';
+export { Navigation } from './Navigation';
 export { Footer } from './Footer';
-
-// Placeholder export to prevent TypeScript errors
-export const LAYOUT_COMPONENTS_PLACEHOLDER = 'Layout components will be exported here'; 
+export { PageLayout, HeroLayout, ContentLayout, GridLayout } from './PageLayout';

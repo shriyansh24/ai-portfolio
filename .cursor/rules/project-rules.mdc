@@ -1,0 +1,166 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Cursor IDE Development Rules - AI-Themed Portfolio Website
+
+## Project Overview and Context
+You are building a cutting-edge portfolio website for an electronics engineer with data science expertise. The website uses transformer neural network architecture as both visual inspiration and functional navigation paradigm. Every component should feel like part of an intelligent system while maintaining professional credibility and technical sophistication.
+
+## Core Development Principles
+
+### Architecture Philosophy
+**Rule**: Treat every component as a node in a neural network - interconnected, responsive, and purposeful. Each piece of code should contribute to the overall "intelligence" of the site while maintaining clear separation of concerns.
+
+**Implementation**: Use React components that can communicate state changes across the entire application, mimicking how attention mechanisms share information across transformer layers. This means implementing a global state management system that allows any component to "attend" to relevant information from other parts of the site.
+
+### Code Quality Standards
+**Rule**: Write code that demonstrates your engineering excellence - it will be viewed by potential employers and collaborators. Every function, component, and style declaration should be clean, well-documented, and showcase best practices.
+
+**Implementation**: Use TypeScript for all components, implement comprehensive error boundaries, include detailed JSDoc comments for complex functions, and follow consistent naming conventions that reflect transformer terminology where appropriate (e.g., `AttentionLayer`, `EncoderSection`, `DecoderOutput`).
+
+## Technical Stack Implementation
+
+### Framework Selection and Setup
+**Rule**: Use Next.js 14+ with App Router for optimal performance and SEO capabilities. This choice supports your professional goals by ensuring fast load times and search engine visibility.
+
+**Implementation**: Initialize with `create-next-app` using TypeScript template, configure for static export compatibility with Vercel deployment, and implement proper metadata management for each section. Structure the app directory to mirror the transformer architecture conceptually.
+
+### Styling Architecture
+**Rule**: Implement Tailwind CSS with custom design tokens that reflect the warm-on-black color palette while maintaining design system consistency across all components.
+
+**Implementation**: Create a custom Tailwind configuration file that defines your color palette (golden orange #FF8C42, coral red #FF6B6B, warm amber #FFD93D) as semantic color names. Build a component library with consistent spacing, typography, and interaction patterns that can be reused throughout the site.
+
+### Animation System Design
+**Rule**: Implement a three-tier animation system using Framer Motion as the primary engine, with Three.js for complex visualizations and CSS transforms for micro-interactions. Animations should enhance understanding rather than distract from content.
+
+**Implementation**: Create animation components that accept configuration objects defining entrance, exit, and interaction behaviors. Implement a global animation state that can coordinate effects across multiple components, simulating how attention mechanisms synchronize across transformer layers.
+
+## Component Architecture Guidelines
+
+### Neural Network Navigation System
+**Rule**: Build a navigation system that visually and functionally represents transformer attention mechanisms, where hovering over one section highlights related content across the entire site.
+
+**Implementation**: Create a `<AttentionNavigation>` component that maintains a graph of content relationships. When users interact with any navigation element, calculate and display relevance scores for all other sections using a weighted attention matrix. Implement smooth transitions that show information "flowing" between related sections.
+
+### Section Components Structure
+**Rule**: Each major section (About, Projects, Experience, etc.) should be built as an independent "layer" that can both encode its own information and attend to information from other layers.
+
+**Implementation**: Design section components with standardized props interfaces that include `attentionWeights`, `relatedSections`, and `interactionState`. This allows sections to dynamically adjust their presentation based on user focus and navigation context.
+
+### Interactive Elements Design
+**Rule**: Every interactive element should provide immediate visual feedback that feels responsive and intelligent, using the warm color palette to guide user attention and create a sense of system responsiveness.
+
+**Implementation**: Implement hover states that use gradient animations shifting from black through warm colors. Create loading states that resemble neural network training processes. Design form interactions that feel like conversations with an intelligent system.
+
+## Content Integration Standards
+
+### Project Showcase Implementation
+**Rule**: Present technical projects with progressive disclosure that allows both quick scanning and deep technical investigation, demonstrating your ability to communicate with both technical and non-technical audiences.
+
+**Implementation**: Build `<ProjectCard>` components with expandable detail levels. Include interactive code samples using syntax highlighting that matches your color palette. Implement live demos where possible, with graceful fallbacks for complex projects.
+
+### Skills Visualization System
+**Rule**: Create an interactive skills matrix that shows relationships between different technologies and experiences, visualized as an interconnected network rather than a static list.
+
+**Implementation**: Use D3.js to create a force-directed graph where skills are nodes and experience levels determine node size. Allow users to filter by category or project type, with smooth transitions that show how skills cluster and relate to each other.
+
+## Performance and Optimization Rules
+
+### Loading Strategy
+**Rule**: Implement intelligent code splitting and lazy loading that prioritizes above-the-fold content while preloading likely user paths based on navigation patterns.
+
+**Implementation**: Use Next.js dynamic imports for animation-heavy components. Implement intersection observer patterns for triggering animations only when elements enter the viewport. Create loading skeletons that maintain the transformer aesthetic while content loads.
+
+### Animation Performance
+**Rule**: Maintain 60fps performance across all devices by implementing animation budgets and progressive enhancement strategies that degrade gracefully on lower-powered devices.
+
+**Implementation**: Use `will-change` CSS properties sparingly and only during active animations. Implement reduced motion preferences detection and provide simplified experiences for users who prefer minimal animation. Monitor performance using React DevTools and optimize based on actual usage patterns.
+
+## Responsive Design Implementation
+
+### Mobile-First Approach
+**Rule**: Design for mobile devices first, then enhance for larger screens, ensuring the transformer theme translates effectively across all viewport sizes.
+
+**Implementation**: Create breakpoint-specific component variants that maintain the neural network metaphor while optimizing for touch interactions. Implement swipe gestures for navigation that feel like manipulating attention weights. Ensure all animations are touch-friendly and performant on mobile devices.
+
+### Cross-Browser Compatibility
+**Rule**: Support modern browsers while providing graceful degradation for older versions, ensuring your technical competence is accessible to all potential viewers.
+
+**Implementation**: Use feature detection for advanced animations and provide CSS-only fallbacks where necessary. Test across Chrome, Firefox, Safari, and Edge. Implement polyfills only for critical functionality to maintain performance.
+
+## Content Management Strategy
+
+### Dynamic Content Updates
+**Rule**: Structure the codebase to allow easy content updates without requiring code changes, enabling regular updates to the "favorite publication of the week" and current projects sections.
+
+**Implementation**: Create JSON or Markdown-based content files for dynamic sections. Implement a simple content management system using Next.js API routes for updating content. Design components that can handle varying content lengths and types gracefully.
+
+### SEO and Metadata Optimization
+**Rule**: Implement comprehensive SEO strategies that help potential employers and collaborators discover your portfolio through search engines while maintaining the technical sophistication of the site.
+
+**Implementation**: Use Next.js metadata API for dynamic title and description generation. Implement JSON-LD structured data for professional information. Create sitemap generation and optimize image loading with proper alt text and lazy loading strategies.
+
+## Accessibility and Inclusive Design
+
+### Keyboard Navigation
+**Rule**: Ensure all interactive elements are fully accessible via keyboard navigation, with clear focus indicators that maintain the transformer aesthetic while meeting WCAG guidelines.
+
+**Implementation**: Implement custom focus styles using your warm color palette. Create skip links for complex navigation sections. Ensure all animations can be paused or reduced based on user preferences.
+
+### Screen Reader Compatibility
+**Rule**: Provide meaningful content descriptions for assistive technologies while maintaining the visual sophistication of the transformer theme.
+
+**Implementation**: Use semantic HTML elements consistently. Implement ARIA labels that describe the neural network metaphor in accessible terms. Provide alternative text for complex visualizations that explains their purpose and content.
+
+## Development Workflow Standards
+
+### Component Testing Strategy
+**Rule**: Write tests that verify both functionality and accessibility, ensuring your portfolio demonstrates not just technical skills but also professional development practices.
+
+**Implementation**: Use Jest and React Testing Library for unit tests. Implement visual regression testing for animation components. Create accessibility tests using axe-core integration.
+
+### Version Control and Documentation
+**Rule**: Maintain clean git history with meaningful commit messages that demonstrate professional development practices, as this repository may be viewed by potential employers.
+
+**Implementation**: Use conventional commit messages that clearly describe features and fixes. Maintain a detailed README that explains the transformer theme implementation. Document component APIs and animation configurations for future maintenance.
+
+## Deployment and Monitoring
+
+### Production Optimization
+**Rule**: Deploy with comprehensive performance monitoring and analytics that demonstrate your understanding of web performance and user experience optimization.
+
+**Implementation**: Configure Vercel deployment with automatic performance monitoring. Implement Google Analytics with custom events for portfolio interaction tracking. Set up error monitoring using Sentry or similar tools.
+
+### Continuous Improvement Framework
+**Rule**: Structure the codebase to support A/B testing and iterative improvements based on user feedback and performance data.
+
+**Implementation**: Create feature flags for experimental animations and layouts. Implement user feedback collection systems. Design the component architecture to support rapid iteration and testing of new transformer-themed features.
+
+## Error Handling and Edge Cases
+
+### Graceful Degradation Strategy
+**Rule**: Handle all potential failure modes gracefully, ensuring the site maintains professional appearance even when advanced features fail to load or perform properly.
+
+**Implementation**: Implement comprehensive error boundaries with custom error pages that maintain the transformer aesthetic. Create fallback content for failed API calls or resource loading. Design offline functionality where appropriate.
+
+### Loading State Management
+**Rule**: Transform loading states into engaging experiences that reinforce the transformer theme while providing clear feedback about system status.
+
+**Implementation**: Create loading animations that resemble neural network training processes. Implement progressive image loading with blurred placeholders. Design skeleton screens that maintain the visual hierarchy while content loads.
+
+## Content Strategy Integration
+
+### Technical Depth Balance
+**Rule**: Implement progressive disclosure patterns that allow visitors to choose their level of technical engagement, from high-level overviews to detailed implementation discussions.
+
+**Implementation**: Create expandable content sections with clear visual hierarchy. Implement tabbed interfaces for different detail levels. Use tooltips and modal dialogs for technical definitions and explanations.
+
+### Storytelling Through Code
+**Rule**: Structure components and interactions to tell the story of your technical journey, with each section building on previous knowledge and demonstrating growth.
+
+**Implementation**: Design navigation flows that follow a logical progression through your experience. Create timeline components that show skill development over time. Implement interactive elements that reveal connections between different projects and experiences.
+
+
+Remember that these rules serve as guardrails for development - they ensure consistency while allowing for creative problem-solving within the transformer theme framework. Every component should feel like part of an intelligent, cohesive system that demonstrates both technical competence and innovative thinking.

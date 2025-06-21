@@ -1,10 +1,10 @@
 /**
  * Utility Functions for AI Portfolio
- * 
+ *
  * This file contains reusable utility functions that support the
  * transformer-themed portfolio functionality. Think of these as the
  * "preprocessing functions" that prepare data for the neural network.
- * 
+ *
  * @fileoverview Core utility functions for common operations
  */
 
@@ -15,10 +15,10 @@
 /**
  * Utility function for conditionally joining classNames
  * Essential for dynamic styling in the transformer theme
- * 
+ *
  * @param classes - Variable number of class name arguments
  * @returns Joined class string
- * 
+ *
  * @example
  * cn('base-class', isActive && 'active-class', 'another-class')
  */
@@ -32,30 +32,30 @@ export function cn(...classes: (string | undefined | null | false)[]): string {
 
 /**
  * Format date for display in the portfolio
- * 
+ *
  * @param date - Date string or Date object
  * @param format - Format type for different contexts
  * @returns Formatted date string
  */
 export function formatDate(
-  date: string | Date, 
+  date: string | Date,
   format: 'short' | 'long' | 'year' = 'long'
 ): string {
   const dateObj = typeof date === 'string' ? new Date(date) : date;
-  
+
   switch (format) {
     case 'short':
-      return dateObj.toLocaleDateString('en-US', { 
-        month: 'short', 
-        year: 'numeric' 
+      return dateObj.toLocaleDateString('en-US', {
+        month: 'short',
+        year: 'numeric',
       });
     case 'year':
       return dateObj.getFullYear().toString();
     case 'long':
     default:
-      return dateObj.toLocaleDateString('en-US', { 
-        month: 'long', 
-        year: 'numeric' 
+      return dateObj.toLocaleDateString('en-US', {
+        month: 'long',
+        year: 'numeric',
       });
   }
 }
@@ -65,28 +65,31 @@ export function formatDate(
  * Useful for experience timelines and project durations
  */
 export function calculateDuration(
-  startDate: string | Date, 
+  startDate: string | Date,
   endDate?: string | Date
 ): string {
   const start = typeof startDate === 'string' ? new Date(startDate) : startDate;
-  const end = endDate 
-    ? (typeof endDate === 'string' ? new Date(endDate) : endDate)
+  const end = endDate
+    ? typeof endDate === 'string'
+      ? new Date(endDate)
+      : endDate
     : new Date();
 
-  const months = (end.getFullYear() - start.getFullYear()) * 12 + 
-                 (end.getMonth() - start.getMonth());
-  
+  const months =
+    (end.getFullYear() - start.getFullYear()) * 12 +
+    (end.getMonth() - start.getMonth());
+
   if (months < 12) {
     return `${months} month${months !== 1 ? 's' : ''}`;
   }
-  
+
   const years = Math.floor(months / 12);
   const remainingMonths = months % 12;
-  
+
   if (remainingMonths === 0) {
     return `${years} year${years !== 1 ? 's' : ''}`;
   }
-  
+
   return `${years} year${years !== 1 ? 's' : ''}, ${remainingMonths} month${remainingMonths !== 1 ? 's' : ''}`;
 }
 
@@ -147,7 +150,7 @@ export function truncateText(text: string, maxLength: number): string {
  */
 export function prefersReducedMotion(): boolean {
   if (typeof window === 'undefined') return false;
-  
+
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
@@ -155,7 +158,10 @@ export function prefersReducedMotion(): boolean {
  * Generate staggered animation delays for list items
  * Creates the neural network activation effect
  */
-export function generateStaggerDelay(index: number, baseDelay: number = 100): number {
+export function generateStaggerDelay(
+  index: number,
+  baseDelay: number = 100
+): number {
   return index * baseDelay;
 }
 
@@ -173,7 +179,7 @@ export function generateStaggerDelay(index: number, baseDelay: number = 100): nu
  * Will be used for neural network navigation
  */
 export function calculateAttentionWeights(
-  currentSection: string, 
+  currentSection: string,
   allSections: string[]
 ): Record<string, number> {
   // Placeholder implementation - will be enhanced with actual attention logic
@@ -182,4 +188,4 @@ export function calculateAttentionWeights(
     weights[section] = section === currentSection ? 1.0 : 0.5;
   });
   return weights;
-} 
+}

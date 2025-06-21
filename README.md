@@ -20,11 +20,13 @@ The website architecture mirrors transformer neural networks:
 ## 🚀 Technology Stack
 
 ### Core Framework
+
 - **Next.js 15+** with App Router for optimal performance and SEO
 - **TypeScript** for enhanced type safety and developer experience
 - **Tailwind CSS 4** for utility-first styling with custom design tokens
 
 ### Planned Integrations
+
 - **Framer Motion** for smooth, performant animations
 - **Three.js** for 3D neural network visualizations
 - **D3.js** for interactive skills and project relationship graphs
@@ -33,13 +35,15 @@ The website architecture mirrors transformer neural networks:
 ## 🎨 Design Philosophy
 
 ### Color Palette
+
 - **Base**: Pure black background for maximum contrast and modern aesthetic
 - **Primary**: Golden orange (#FF8C42) for primary actions and highlights
-- **Secondary**: Coral red (#FF6B6B) for attention-grabbing elements  
+- **Secondary**: Coral red (#FF6B6B) for attention-grabbing elements
 - **Tertiary**: Warm amber (#FFD93D) for subtle accents and success states
 - **Text**: Warm white (#FEFEFE) for optimal readability
 
 ### Animation Principles
+
 - **Purpose-Driven**: Animations enhance understanding rather than distract
 - **Performance-Conscious**: Maintain 60fps across all devices
 - **Accessible**: Respect user preferences for reduced motion
@@ -70,20 +74,24 @@ public/
 ## 🔧 Development Setup
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm 8+
 
 ### Installation
+
 ```bash
 npm install
 ```
 
 ### Development Server
+
 ```bash
 npm run dev
 ```
 
 ### Available Scripts
+
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
@@ -93,11 +101,13 @@ npm run dev
 ## 🎯 Development Goals
 
 ### Primary Objectives
+
 1. **Professional Differentiation**: Stand out in a crowded field of technical portfolios
 2. **Technical Demonstration**: Show both engineering knowledge and web development skills
 3. **Engagement Generation**: Create memorable interactions that lead to meaningful conversations
 
 ### Success Metrics
+
 - **Engagement Time**: Average session duration > 3 minutes
 - **Interaction Rate**: >70% of visitors interact with at least 3 sections
 - **Performance**: Core Web Vitals scores in the "Good" range
@@ -106,16 +116,19 @@ npm run dev
 ## 🌟 Unique Features (Planned)
 
 ### Neural Network Navigation
+
 - Visual node connections that activate based on user attention
 - Attention weight visualization showing content relationships
 - Smooth transitions mimicking information flow
 
 ### Interactive Skill Matrix
+
 - Force-directed graph showing technology relationships
 - Filterable by category and experience level
 - Dynamic animations for exploration
 
 ### Project Showcase
+
 - Progressive disclosure for technical depth
 - Interactive code samples with syntax highlighting
 - Live demos where technically feasible
@@ -137,6 +150,7 @@ npm run dev
 ## 🎓 Learning Objectives
 
 This project demonstrates proficiency in:
+
 - Modern React patterns and Next.js App Router
 - TypeScript for large-scale applications
 - Performance optimization techniques
@@ -146,4 +160,4 @@ This project demonstrates proficiency in:
 
 ---
 
-*This portfolio serves as both a demonstration of technical skills and an exploration of innovative web development approaches that merge engineering thinking with creative design.*
+_This portfolio serves as both a demonstration of technical skills and an exploration of innovative web development approaches that merge engineering thinking with creative design._

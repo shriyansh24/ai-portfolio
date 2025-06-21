@@ -1,10 +1,10 @@
 /**
  * Data Structures for AI Portfolio
- * 
+ *
  * This file contains static data and configuration used throughout
  * the portfolio. Think of this as the "training data" for our
  * transformer-themed website.
- * 
+ *
  * @fileoverview Static content and configuration data
  */
 
@@ -19,7 +19,8 @@
 export const siteConfig = {
   name: 'AI Portfolio',
   title: 'Your Name | Electronics Engineer & Data Scientist',
-  description: 'Transformer-themed portfolio showcasing expertise in electronics engineering and data science through innovative AI-inspired design',
+  description:
+    'Transformer-themed portfolio showcasing expertise in electronics engineering and data science through innovative AI-inspired design',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
   author: {
     name: 'Your Name',
@@ -36,7 +37,7 @@ export const siteConfig = {
     'AI',
     'transformer',
     'neural networks',
-    'web development'
+    'web development',
   ],
 };
 
@@ -104,22 +105,22 @@ export const navigationConfig = [
 export const themeConfig = {
   colors: {
     // Primary warm palette
-    primary: '#FF8C42',    // Golden orange
-    secondary: '#FF6B6B',  // Coral red
-    tertiary: '#FFD93D',   // Warm amber
-    
+    primary: '#FF8C42', // Golden orange
+    secondary: '#FF6B6B', // Coral red
+    tertiary: '#FFD93D', // Warm amber
+
     // Base colors
     background: '#000000', // Pure black
-    surface: '#1a1a1a',   // Dark gray for cards/sections
-    text: '#FEFEFE',      // Warm white
+    surface: '#1a1a1a', // Dark gray for cards/sections
+    text: '#FEFEFE', // Warm white
     textSecondary: '#CCCCCC', // Muted text
-    
+
     // State colors
     success: '#4CAF50',
     warning: '#FF9800',
     error: '#F44336',
     info: '#2196F3',
-    
+
     // Gradient definitions for neural network effects
     gradients: {
       primary: 'linear-gradient(135deg, #FF8C42 0%, #FF6B6B 100%)',
@@ -127,7 +128,7 @@ export const themeConfig = {
       neural: 'linear-gradient(90deg, #FF8C42 0%, #FF6B6B 50%, #FFD93D 100%)',
     },
   },
-  
+
   animation: {
     // Timing functions for transformer-themed animations
     easing: {
@@ -135,7 +136,7 @@ export const themeConfig = {
       bounce: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       neural: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
     },
-    
+
     // Duration presets
     duration: {
       fast: 150,
@@ -144,7 +145,7 @@ export const themeConfig = {
       neural: 800, // For attention mechanism animations
     },
   },
-  
+
   breakpoints: {
     sm: '640px',
     md: '768px',
@@ -166,15 +167,16 @@ export const placeholderProjects = [
   {
     id: 'neural-circuit-analyzer',
     title: 'Neural Circuit Analyzer',
-    description: 'AI-powered tool for analyzing electronic circuit behavior using transformer networks',
+    description:
+      'AI-powered tool for analyzing electronic circuit behavior using transformer networks',
     category: 'electronics' as const,
     status: 'completed' as const,
-         technologies: ['Python', 'TensorFlow', 'Circuit Simulation', 'React'],
-     startDate: '2024-01-01',
-     endDate: '2024-06-01',
-     featured: true,
-     tags: ['AI', 'Electronics', 'Analysis'],
-     longDescription: 'Detailed description of the project...',
+    technologies: ['Python', 'TensorFlow', 'Circuit Simulation', 'React'],
+    startDate: '2024-01-01',
+    endDate: '2024-06-01',
+    featured: true,
+    tags: ['AI', 'Electronics', 'Analysis'],
+    longDescription: 'Detailed description of the project...',
     relatedSkills: ['python', 'machine-learning', 'electronics'],
     projects: [], // Will be populated with related project IDs
   },
@@ -285,4 +287,4 @@ export default {
   navigation: navigationConfig,
   theme: themeConfig,
   attention: attentionMatrix,
-}; 
+};
