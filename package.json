@@ -1,12 +1,37 @@
 {
   "name": "ai-portfolio",
   "version": "0.1.0",
+  "description": "A transformer-themed portfolio website showcasing electronics engineering and data science expertise through innovative AI-inspired UI and navigation patterns",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "ai",
+    "transformer",
+    "neural-network",
+    "electronics-engineering", 
+    "data-science",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "web-development",
+    "machine-learning"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-portfolio"
+  },
+  "homepage": "https://your-portfolio-domain.com",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "preview": "next build && next start",
+    "clean": "rm -rf .next out dist",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -22,6 +47,11 @@
     "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
-    "@eslint/eslintrc": "^3"
+    "@eslint/eslintrc": "^3",
+    "cross-env": "^7.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }
