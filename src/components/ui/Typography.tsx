@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 interface TypographyProps {
   children: React.ReactNode;
-  className?: string;
+  className?: string | undefined;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div';
   variant?: 'display' | 'heading' | 'title' | 'subtitle' | 'body' | 'caption' | 'overline';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';

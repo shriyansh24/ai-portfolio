@@ -282,9 +282,11 @@ export const attentionMatrix = {
 // ============================================================================
 
 // Export all configuration for easy importing
-export default {
+const portfolioData = {
   site: siteConfig,
   navigation: navigationConfig,
   theme: themeConfig,
   attention: attentionMatrix,
 };
+
+export default portfolioData;

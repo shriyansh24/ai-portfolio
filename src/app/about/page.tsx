@@ -105,7 +105,7 @@ export default function AboutPage() {
                 <p className="text-gray-400 leading-relaxed">
                   Transitioned from traditional electronics engineering into the fascinating 
                   world of data science and AI. This evolution mirrors the transformer 
-                  architecture's ability to process sequential information and discover 
+                  architecture&apos;s ability to process sequential information and discover 
                   patterns across different domains.
                 </p>
                 <div className="pt-4">
@@ -132,10 +132,10 @@ export default function AboutPage() {
           </h2>
           
           <blockquote className="text-lg text-gray-300 leading-relaxed italic border-l-4 border-primary pl-6">
-            "            &quot;Just as transformer models excel by paying attention to the most relevant 
+            &quot;Just as transformer models excel by paying attention to the most relevant 
             information while processing sequences, I believe in focusing deeply on 
             problems that matter, drawing connections across disciplines, and building 
-            solutions that are both technically excellent and practically useful.&quot;"
+            solutions that are both technically excellent and practically useful.&quot;
           </blockquote>
           
           <div className="grid md:grid-cols-3 gap-6 mt-12">
@@ -211,7 +211,7 @@ export default function AboutPage() {
         {/* Call to Action */}
         <section className="text-center space-y-6">
           <h2 className="text-2xl font-bold text-warm-white">
-            Let's Connect & Collaborate
+            Let&apos;s Connect & Collaborate
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
                           Whether you&apos;re interested in discussing transformer architectures, 

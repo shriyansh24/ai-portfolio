@@ -177,7 +177,7 @@ export default function ProjectsPage() {
             More Projects Coming Soon
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            I'm currently working on expanding this section with detailed project 
+            I&apos;m currently working on expanding this section with detailed project 
             showcases, interactive demos, and comprehensive technical documentation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

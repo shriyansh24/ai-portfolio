@@ -1,20 +1,9 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { NavigationProvider } from '@/components/providers/NavigationProvider';
 import { AnalyticsProvider } from '@/components/providers/AnalyticsProvider';
 
-/**
- * Inter font configuration for modern, technical aesthetic
- * Inter provides excellent readability for technical content while maintaining
- * a contemporary feel that aligns with the AI/transformer theme
- */
-const inter = Inter({ 
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter'
-});
 
 /**
  * Enhanced metadata configuration for AI Portfolio
@@ -109,8 +98,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <body className="font-inter bg-black text-warm-white antialiased min-h-screen">
+    <html lang="en" suppressHydrationWarning>
+      <body className="font-sans bg-black text-warm-white antialiased min-h-screen">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
