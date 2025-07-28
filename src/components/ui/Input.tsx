@@ -38,7 +38,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     ...props
   }, ref) => {
     const [showPassword, setShowPassword] = useState(false);
-    const [focused, setFocused] = useState(false);
     
     const isPassword = type === 'password';
     const inputType = isPassword ? (showPassword ? 'text' : 'password') : type;
@@ -89,8 +88,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               disabled && 'opacity-50 cursor-not-allowed',
               className
             )}
-            onFocus={() => setFocused(true)}
-            onBlur={() => setFocused(false)}
+            onFocus={() => {}}
+            onBlur={() => {}}
             disabled={disabled}
             aria-invalid={hasError ? 'true' : 'false'}
             aria-describedby={

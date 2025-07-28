@@ -24,7 +24,7 @@ export default function NotFound() {
             Neural Path Not Found
           </h2>
           <p className="text-gray-400 leading-relaxed">
-            The attention mechanism couldn't locate the requested page. 
+            The attention mechanism couldn&apos;t locate the requested page. 
             This neural pathway may have been pruned or never existed in the network.
           </p>
         </div>
